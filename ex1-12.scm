@@ -1,5 +1,4 @@
-#! /usr/bin/env guile
-!#
+#! /usr/bin/env csi -s
 
 (define (pascal-triangle n)
   (if (= n 1) 1

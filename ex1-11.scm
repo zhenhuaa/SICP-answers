@@ -1,5 +1,4 @@
-#! /usr/bin/env guile
-!#
+#! /usr/bin/env csi -s
 
 (define (f n)
   (if (< n 3) n
@@ -14,5 +13,5 @@
 
 (display "By Recursive\n")
 (display (f 10))
-(display "By Iterate\n")
+(display "\nBy Iterate\n")
 (display (f2 10))

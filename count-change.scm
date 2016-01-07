@@ -1,5 +1,4 @@
-#! /usr/bin/env guile
-!#
+#! /usr/bin/env csi -s
 
 (define (cc amount) 
   (define (count-change amount n)
