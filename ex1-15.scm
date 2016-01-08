@@ -12,7 +12,7 @@
 
 (display "Invoke p times: ")
 (define (invoke-p n)
-  (round ((make-log/base (/ 1 3)) (/ 0.1 n))))
+  (ceiling ((make-log/base (/ 1 3)) (/ 0.1 n))))
 (display (invoke-p 12.15)) 
-; a: p is applied 4 times
+; a: p is applied 5 times
 ; b order of growth is log(n)
