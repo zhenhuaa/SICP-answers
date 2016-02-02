@@ -2,7 +2,7 @@
 
 ;   [c1 - c1*d1, c1 + c1*d2]  * [c2 - c2*d2, c2 + c2*d2]
 ; = [c1c2 - (d1+d2)c1c2 + c1c2d1d2, c1c2 + (d1+d2)c1c2 + c1c2d1d2]
-; ~ [c1c2 - (d1+d2)c1c2 + (d1+d2)c1c2] (when d1 d2 is very small)
+; ~ [c1c2 - (d1+d2)c1c2, c1c2 + (d1+d2)c1c2] (when d1 d2 is very small)
 ; new percent approximately is about (d1+d2)
 
 
