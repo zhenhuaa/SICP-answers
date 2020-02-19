@@ -22,7 +22,7 @@
   (let ((cols (transpose n)))
     (map (lambda (v) (matrix-*-vector cols v)) m)))
 
-(use test)
+(import test)
 (define m1 '((1 2 3 4) (4 5 6 6) (6 7 8 9)))
 (define m2 '((1 2) (3 4)))
 (test 8 (dot-product '(1 2) '(2 3)))

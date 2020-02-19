@@ -11,13 +11,13 @@
       (iter (op result (car rest)) (cdr rest))))
   (iter initial seq))
 
-(use test)
+(import test)
 (test '(1 2) (reverse (reverse '(1 2))))
 (test '(1 2 3 4) (reverse (reverse '(1 2 3 4))))
 
 (define (reverse seq)
   (fold-left (lambda (result first) (cons first result))nil seq))
 
-(use test)
+(import test)
 (test '(1 2) (reverse (reverse '(1 2))))
 (test '(1 2 3 4) (reverse (reverse '(1 2 3 4))))

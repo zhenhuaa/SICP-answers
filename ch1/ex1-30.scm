@@ -12,6 +12,6 @@
 (define (sum-integers a b)
   (sum identity a inc b))
 
-(use test)
+(import test)
 (test 15 (sum-integers 1 5))
 (test 55 (sum-integers 1 10))

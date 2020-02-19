@@ -7,6 +7,6 @@
         (else (append (fringe (car x))
                       (fringe (cdr x))))))
 
-(use test)
+(import test)
 (define x '((1 2) (3 4)))
 (test '(1 2 3 4) (fringe x))

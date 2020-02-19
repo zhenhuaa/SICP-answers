@@ -35,7 +35,7 @@
     ((and (interval-positive? x) (interval-positive? y))
      (make-interval (* (lower-bound x) (lower-bound y)) (* (upper-bound x) (upper-bound y))))))
 
-(use test)
+(import test)
 (test (make-interval 2 8) (mul-interval (make-interval 1 2) (make-interval 2 4)))
 (test (make-interval -16 8) (mul-interval (make-interval -2 4) (make-interval -4 2)))
 (test (make-interval  -4 8) (mul-interval (make-interval -2 4) (make-interval 1 2)))

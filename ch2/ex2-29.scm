@@ -42,7 +42,7 @@
 (define (branch-length b) (car b))
 (define (branch-structure b) (cdr b))
 
-(use test)
+(import test)
 (define b1 (make-branch 2 1))
 (define b2 (make-branch 1 2))
 (define m1 (make-mobile b1 b2))

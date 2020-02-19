@@ -11,7 +11,7 @@
 (define (factorial n)
   (product identity 1 inc n))
 
-(use test)
+(import test)
 (test 6 (factorial 3))
 (test 24 (factorial 4))
 

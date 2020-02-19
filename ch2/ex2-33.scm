@@ -12,7 +12,7 @@
 (define (length-2 sequence)
   (accumulate (lambda (x y) (+ 1 y)) 0 sequence))
 
-(use test)
+(import test)
 (test '(1 4 9) (map (lambda (x) (* x x)) (list 1 2 3)))
 (test '(1 2 3 4) (append-2 '(1 2) '(3 4)))
 (test 4 (length-2 '(1 2 3 4)))

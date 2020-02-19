@@ -12,6 +12,6 @@
 (define (smooth f)
   (lambda (x) (average (f (- x dx)) (f x) (f (+ x dx)))))
 
-(use test)
+(import test)
 (test 4.0 (((repeated smooth 10) (lambda (x) (* 2 x))) 2))
 (test #f (= 4 (((repeated smooth 1) square) 2)))

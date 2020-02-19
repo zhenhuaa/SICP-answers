@@ -1,6 +1,6 @@
 #! /usr/bin/env csi -q
 
-(use test)
+(import test)
 (test 7 ((lambda (x) (car (cdr (car (cdr (cdr x))))))
          (list 1 3 (list 5 7) 9)))
 (test 7 ((lambda (x) (car (car x)))

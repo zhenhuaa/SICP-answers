@@ -10,6 +10,6 @@
         (else #f)))
 
 
-(use test)
+(import test)
 (test #t (equal? '(this is a list) '(this is a list)))
 (test #f (equal? '(this is a list) '(this (is a) list)))

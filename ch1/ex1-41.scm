@@ -4,6 +4,6 @@
 
 (define (inc x) (+ x 1))
 
-(use test)
+(import test)
 (test 2 ((double inc) 0))
 (test 21 (((double (double double)) inc) 5))

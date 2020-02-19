@@ -21,7 +21,7 @@
          (= s (+ (car triple) (cadr triple) (caddr triple))))
        (unique-triples n)))
 
-(use test)
+(import test)
 (test '(1 2 3) (enumerate-interval 1 3))
 (test '(2 3 4) (enumerate-interval 2 4))
 (test '((1 2 3) (1 2 4) (1 3 4) (2 3 4)) (unique-triples 4))

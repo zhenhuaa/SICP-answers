@@ -12,5 +12,5 @@
 
 (define (square-tree tree) (tree-map square tree))
 
-(use test)
+(import test)
 (test '(1 (4 (9 16) 25) (36 49)) (square-tree '(1 (2 (3 4) 5) (6 7))))

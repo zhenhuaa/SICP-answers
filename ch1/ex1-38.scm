@@ -17,7 +17,7 @@
     (* 2 (+ 1 (/ (- x 2) 3)))
     1))
 
-(use test)
+(import test)
 (test 1 (d 1))
 (test 2 (d 2))
 (test 1 (d 3))

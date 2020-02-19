@@ -14,5 +14,5 @@
 
   (iter items '()))
 
-(use test)
+(import test)
 (test '(1 4 9 16) (square-list '(1 2 3 4)))

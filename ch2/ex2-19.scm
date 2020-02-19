@@ -15,5 +15,5 @@
 (define (except-first-denomination coin-values) (cdr coin-values))
 (define (first-denomination coin-values) (car coin-values))
 
-(use test)
+(import test)
 (test 292 (cc 100 us-coins))

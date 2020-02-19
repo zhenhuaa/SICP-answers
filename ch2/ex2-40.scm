@@ -10,7 +10,7 @@
 
 (define (flat-map proc seq) (fold-right append nil (map proc seq)))
 
-(use test)
+(import test)
 (test '(1 2 3) (enumerate-interval 1 3))
 (test '(2 3 4) (enumerate-interval 2 4))
 (test '((2 1) (3 1) (3 2)) (unique-pairs 3))

@@ -5,7 +5,7 @@
     (list (car items))
     (last-pair (cdr items))))
 
-(use test)
+(import test)
 
 (test (list 2) (last-pair (list 1 2)))
 (test (list 1) (last-pair (list 1)))

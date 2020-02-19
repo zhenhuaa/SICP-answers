@@ -39,7 +39,7 @@
   (fib-iter 1 0 0 1 n))
 
 
-(use test)
+(import test)
 (test 0 (fib 0))
 (test 3 (fib 4))
 (test 5 (fib 5))

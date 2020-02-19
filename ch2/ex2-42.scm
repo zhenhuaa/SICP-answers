@@ -39,7 +39,7 @@
               rest-queen-positions))))
 
 
-(use test)
+(import test)
 (test 1 (length (queens 1)))
 (test 2 (length (queens 4)))
 (test 92 (length (queens 8)))

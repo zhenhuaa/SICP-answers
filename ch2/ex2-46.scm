@@ -21,7 +21,7 @@
   (make-vect (* s (xcor-vect v))
              (* s (ycor-vect v))))
 
-(use test)
+(import test)
 (test (make-vect 3 3) (add-vect (make-vect 1 1) (make-vect 2 2)))
 (test (make-vect -1 -1) (sub-vect (make-vect 1 1) (make-vect 2 2)))
 (test (make-vect 4 4) (scale-vect 4 (make-vect 1 1)))

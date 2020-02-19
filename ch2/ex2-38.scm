@@ -7,7 +7,7 @@
       (iter (op result (car rest)) (cdr rest))))
   (iter initial seq))
 
-(use test)
+(import test)
 
 (define nil '())
 (test 1.5 (fold-right / 1 '(1 2 3)))

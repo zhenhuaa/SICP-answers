@@ -5,5 +5,5 @@
 
 (define (compose f g) (lambda (x) (f (g x))))
 
-(use test)
+(import test)
 (test 49 ((compose square inc) 6))

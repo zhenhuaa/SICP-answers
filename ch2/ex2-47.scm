@@ -12,7 +12,7 @@
 (define (edge2-frame frame)
   (list-ref frame 2))
 
-(use test)
+(import test)
 (define f (make-frame 1 2 3))
 (test 1 (origin-frame f))
 (test 2 (edge1-frame f))

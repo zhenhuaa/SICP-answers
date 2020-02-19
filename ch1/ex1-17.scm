@@ -10,6 +10,6 @@
         ((even? b) (fast-multi (+ a a) (/ b 2)))
         (else (+ a (fast-multi a (- b 1))))))
 
-(use test)
+(import test)
 (test 12 (* 3 4))
 (test 12 (fast-multi 3 4))

@@ -16,5 +16,5 @@
                (else (square-tree x))))
        items))
 
-(use test)
+(import test)
 (test '(1 (4 (9 16) 25) (36 49)) (square-tree '(1 (2 (3 4) 5) (6 7))))

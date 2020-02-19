@@ -10,7 +10,7 @@
         ((= (remainder n test-divisor) 0) test-divisor)
         (else (find-divisor n (+ test-divisor 1)))))
 
-(use test)
+(import test)
 (test 3 (smallest-divisor 15))
 (test 7 (smallest-divisor 77))
 

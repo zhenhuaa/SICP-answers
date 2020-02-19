@@ -13,7 +13,7 @@
           (else (fast-expt-iter-helper acc (* b b) (/ n 2)))))
   (fast-expt-iter-helper 1 b n))
 
-(use test)
+(import test)
 (test (expt 3 4) (fast-expt 3 4))
 (test (expt 3 4) (fast-expt-iter 3 4))
 (test (expt 3 9) (fast-expt-iter 3 9))

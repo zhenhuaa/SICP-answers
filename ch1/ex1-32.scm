@@ -19,7 +19,7 @@
 (define (factorial n)
   (product identity 1 inc n))
 
-(use test)
+(import test)
 (test 15 (sum-integers 1 5))
 (test 24 (factorial 4))
 
@@ -28,6 +28,6 @@
     (if (> a b) result (iter (next a) (combiner (term a) result))))
   (iter a null-value))
 
-(use test)
+(import test)
 (test 15 (sum-integers 1 5))
 (test 24 (factorial 4))

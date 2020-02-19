@@ -51,7 +51,7 @@
                        (deriv (base exp) var)))
         (else (error "unknown expression type -- DERIV" exp))))
 
-(use test)
+(import test)
 (test 1 (deriv (make-exponentiation 'x 1) 'x))
 (test 0 (deriv (make-exponentiation 'x 0) 'x))
 (test '(* 3 (^ x 2)) (deriv (make-exponentiation 'x 3) 'x))

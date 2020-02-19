@@ -9,7 +9,7 @@
     (list-push (list-reverse (cdr items)) (car items))))
 
 
-(use test)
+(import test)
 (test (list 1 2) (list-push (list 1) 2))
 (test (list) (list-reverse (list)))
 (test (list 1) (list-reverse (list 1)))

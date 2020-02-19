@@ -30,7 +30,7 @@
 (define (sum-of-prime a b)
   (filtered-accumulate prime? + 0 identity a inc b))
 
-(use test)
+(import test)
 (test (+ 1 2 3 5 7) (sum-of-prime 1 10))
 
 

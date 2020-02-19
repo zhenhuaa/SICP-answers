@@ -17,7 +17,7 @@
     (+ (/ 1.0 (* a (+ a 2)))
        (pi-sum (+ a 4) b))))
 
-(use test)
+(import test)
 (test 15 (sum-integers 1 5))
 (test 36 (sum-cubes 1 3))
 (test #t (< (abs (- 3.14 (* 8 (pi-sum 1 3000)))) 0.1))
