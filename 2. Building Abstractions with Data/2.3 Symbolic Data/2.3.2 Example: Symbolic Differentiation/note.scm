@@ -35,7 +35,7 @@
 
 
 (define (deriv exp var)
-  (cond ((number? exp) 0)
+  [cond ((number? exp) 0)
         ((variable? exp)
          (if (same-variable? exp var) 1 0))
         ((sum? exp)
@@ -50,13 +50,7 @@
            (deriv (multiplier exp) var)
            (multiplicand exp))))
         (else (error "unknown expression 
-                      type: DERIV" exp))))
-
-  (define (puts x) (begin (display x) (newline)))
-  (puts (deriv '(+ x 3) 'x))
-  (puts (deriv '(* x y) 'x))
-  (puts (deriv '(* (* x y) (+ x 3)) 'x))
-
+                      type: DERIV" exp))])
 
 (define (make-sum a1 a2) (cond ((=number? a1 0) a2) ((=number? a2 0) a1)
   ((and (number? a1) (number? a2)) (+ a1 a2))
@@ -71,7 +65,3 @@
   ((=number? m2 1) m1)
   ((and (number? m1) (number? m2)) (* m1 m2)) 
   (else (list '* m1 m2))))
-
-(puts (deriv '(+ x 3) 'x))
-(puts (deriv '(* x y) 'x))
-(puts (deriv '(* (* x y) (+ x 3)) 'x))

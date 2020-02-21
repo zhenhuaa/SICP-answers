@@ -10,6 +10,8 @@ anything raised to the power 1 is the thing itself.
 |#
 
 
+(load "/Users/zhenhua/learnx/sicp/2. Building Abstractions with Data/2.3 Symbolic Data/2.3.2 Example: Symbolic Differentiation/note.scm")
+
 (define (exponentiation? x) (and (pair? x) (eq? (car x) '**)))
 
 ; The base is the second item of the sum list:
@@ -23,3 +25,31 @@ anything raised to the power 1 is the thing itself.
           ((=number> exponent 1), base)
           (else (list '** base exponent))
     ])
+
+
+(define (deriv exp var)
+  (cond ((number? exp) 0)
+        ((variable? exp)
+         (if (same-variable? exp var) 1 0))
+        ((sum? exp)
+         (make-sum (deriv (addend exp) var)
+                   (deriv (augend exp) var)))
+        ((product? exp)
+         (make-sum
+          (make-product 
+           (multiplier exp)
+           (deriv (multiplicand exp) var))
+          (make-product 
+           (deriv (multiplier exp) var)
+           (multiplicand exp))))
+
+        ((exponentiation? exp) (
+            (let ((u (base exp)) (n (exponent exp)))
+            (make-product
+              (make-product n (make-exponentiation u (- n 1)))
+              (deriv u x)
+            ))
+        ))
+
+        (else (error "unknown expression 
+                      type: DERIV" exp))))
