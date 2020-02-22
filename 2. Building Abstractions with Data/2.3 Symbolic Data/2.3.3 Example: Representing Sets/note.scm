@@ -1,4 +1,8 @@
 ; normal list
+
+(define true #t)
+(define false #f)
+
 (define (element-of-set? x set) 
     (cond ((null? set) #f)
     ((equal? x (car set)) #t)
@@ -22,7 +26,7 @@
     ((< x (car set)) false)
     (else (element-of-set? x (cdr set)))))
 
-(define (adjoin-order-set x) (adjoin-set x))
+(define adjoin-order-set adjoin-set)
 
 (define (intersection-order-set set1 set2) 
     (if (or (null? set1) (null? set2))
@@ -41,7 +45,7 @@
 (define (make-tree entry left right)
     (list entry left right))
 
-(define (adjoin-tree-set x set) (adjoin-set x set))
+(define adjoin-tree-set adjoin-set)
 
 (define (adjoin-tree-set x set)
     [cond ((null? set) (make-tree x '() '()))
