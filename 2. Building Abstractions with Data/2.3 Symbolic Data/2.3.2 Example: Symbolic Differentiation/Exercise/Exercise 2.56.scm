@@ -9,8 +9,7 @@ Build in the rules that anything raised to the power 0 is 1 and
 anything raised to the power 1 is the thing itself.
 |#
 
-
-(load "/Users/zhenhua/learnx/sicp/2. Building Abstractions with Data/2.3 Symbolic Data/2.3.2 Example: Symbolic Differentiation/note.scm")
+(load "../note.scm")
 
 (define (exponentiation? x) (and (pair? x) (eq? (car x) '**)))
 
@@ -20,9 +19,11 @@ anything raised to the power 1 is the thing itself.
 ; The exponent is the third item of the sum list:
 (define (exponent s) (caddr s))
 
+(define (<=number? exp num) (and (number? exp) (<= exp num)))
+
 (define (make-exponentiation base exponent) 
-    [cond ((=number? exponent) 0)
-          ((=number> exponent 1), base)
+    [cond ((<=number? exponent 0) 1)
+          ((=number? exponent 1) base)
           (else (list '** base exponent))
     ])
 
@@ -43,13 +44,12 @@ anything raised to the power 1 is the thing itself.
            (deriv (multiplier exp) var)
            (multiplicand exp))))
 
-        ((exponentiation? exp) (
-            (let ((u (base exp)) (n (exponent exp)))
-            (make-product
-              (make-product n (make-exponentiation u (- n 1)))
-              (deriv u x)
-            ))
-        ))
+        ((exponentiation? exp) [let ((u (base exp)) (n (exponent exp)))
+                (make-product
+                    (make-product n (make-exponentiation u (- n 1)))
+                    (deriv u var)
+            )]
+        )
 
         (else (error "unknown expression 
                       type: DERIV" exp))))
