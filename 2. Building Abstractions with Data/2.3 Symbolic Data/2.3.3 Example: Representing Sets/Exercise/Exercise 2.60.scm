@@ -8,3 +8,9 @@ Are there applications for which you would use this representation in preference
 |#
 
 (load "../note.scm")
+
+
+(define (adjoin-set x set) set (cons x set))
+
+(define (union-set set1 set2) 
+   (append set1 set2)) 
