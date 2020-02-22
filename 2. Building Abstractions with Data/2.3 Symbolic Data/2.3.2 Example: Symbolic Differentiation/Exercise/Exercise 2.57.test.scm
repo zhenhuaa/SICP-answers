@@ -1,8 +1,6 @@
 (load "Exercise 2.57.scm")
 (import test)
 
-(deriv '(* x y (+ x 3)) 'x)
-
 (test-group "function augend"
   [test "augend for two terms" 2 [augend '(+ 1 2)]]
   [test "augend ok for three terms" '(+ 2 3) [augend '(+ 1 2 3)]]
