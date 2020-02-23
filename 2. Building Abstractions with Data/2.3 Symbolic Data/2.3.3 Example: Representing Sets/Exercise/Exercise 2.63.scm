@@ -12,12 +12,13 @@ b. Do the two procedures have the same order of growth in the number of
 |#
 
 (load "../note.scm")
+(import trace)
 
 (define (tree->list-1 tree) 
     (if (null? tree) '()
     (append (tree->list-1 (left-branch tree))
         (cons (entry tree) (tree->list-1
-        (right-branch tree)))))) 
+        (right-branch tree))))))
 
 (define (tree->list-2 tree)
     (define (copy-to-list tree result-list) 
@@ -25,6 +26,7 @@ b. Do the two procedures have the same order of growth in the number of
             (copy-to-list (left-branch tree)
                 (cons (entry tree) 
                       (copy-to-list (right-branch tree) result-list)))))
+    (trace copy-to-list)
     (copy-to-list tree '()))
 
 (define fig2-16-1 '(7 (3 (1 () ()) (5 () ())) (9 () (11 () ())))) 
@@ -32,14 +34,9 @@ b. Do the two procedures have the same order of growth in the number of
 (define fig2-16-3 '(5 (3 (1 () ()) ()) (9 (7 () ()) (11 () ())))) 
 
 ; test
-(import trace)
 (trace tree->list-1)
 ; (trace tree->list-2)
 
-(define puts ())
-
-(display "Trace list-1 ")
 (tree->list-1 fig2-16-1)
-(display "Trace list-2 ")
-; (tree->list-2 fig2-16-1)
+(tree->list-2 fig2-16-1)
 
