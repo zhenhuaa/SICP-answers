@@ -34,9 +34,7 @@ b. Do the two procedures have the same order of growth in the number of
 (define fig2-16-3 '(5 (3 (1 () ()) ()) (9 (7 () ()) (11 () ())))) 
 
 ; test
-(trace tree->list-1)
+; (trace tree->list-1)
 ; (trace tree->list-2)
-
-(tree->list-1 fig2-16-1)
-(tree->list-2 fig2-16-1)
+; (tree->list-1 fig2-16-1)
 

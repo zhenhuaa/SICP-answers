@@ -18,25 +18,12 @@ Exercise 2.64: The following procedure list->tree con- verts an ordered list to 
         (let ((right-tree (car right-result)) (remaining-elts (cdr right-result))) (cons (make-tree this-entry left-tree right-tree) remaining-elts))))))))
 
 
-(import trace)
-(trace partial-tree)
 
-(list->tree '(1 2))
+; a. Write a short paragraph explaining as clearly as you can how partial-tree works. Draw the tree produced by list->tree for the list (1 3 5 7 9 11).
+; (import trace)
+; (trace partial-tree)
 
+; (list->tree '(1 3 5 7 9))
 
-'((5 
-    (1 
-        () 
-        (3 
-            () 
-            ()
-        )
-    ) 
-    (7 
-        () 
-        (9
-            () 
-            ()
-        )
-    )
-)) 
+; b. What is the order of growth in the number of steps required by list->tree to convert a list of n elements?
+; Θ(n) 
