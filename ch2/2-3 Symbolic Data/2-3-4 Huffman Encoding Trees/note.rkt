@@ -1,10 +1,4 @@
 #lang racket
-(require rebellion/type/record)
+(require rebellion/type/tuple)
 
-(define-record-type opcode (name argument addressing-mode))
-(define add-42
-  (opcode #:name 'ADD
-          #:argument 42
-          #:addressing-mode 'immediate))
-
-(define-record-type color (red green blue))
+(define-tuple-type leaf (symbol weight))
