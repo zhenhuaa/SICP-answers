@@ -1,19 +1,23 @@
+# Huffman Encoding
+
 In general, if we want to distinguish n different symbols, we will need to use log2n bits per symbol.
 
 Codes such as ASCII and the A-through-H code above are known as fixed-length codes
 
-Another solution is to design the code in such a way that no complete code for any symbol 
-is the beginning (or prefix) of the code for another symbol. Such a code is called a prefix code. 
+Another solution is to design the code in such a way that no complete code for any symbol
+is the beginning (or prefix) of the code for another symbol. Such a code is called a prefix code.
 
-A Huffman code can be represented as a binary tree whose leaves are the symbols that are encoded. 
+A Huffman code can be represented as a binary tree whose leaves are the symbols that are encoded.
 At each non-leaf node of the tree there is a set containing all the symbols in the leaves that lie below the node
 
 Each time we move down a le branch we add a 0 to the code, and each time we move down a right branch we add a 1.
 
 ## Generating Huffman trees
-Arrange the tree so that the symbols with the lowest frequency appear farthest away from the root. 
+
+Arrange the tree so that the symbols with the lowest frequency appear farthest away from the root.
 
 ## Representing Huffman trees
+
 ```lisp
 (define (make-leaf symbol weight) (list 'leaf symbol weight)) 
 (define (leaf? object) (eq? (car object) 'leaf))
