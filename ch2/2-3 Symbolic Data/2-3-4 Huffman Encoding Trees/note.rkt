@@ -1,5 +1,7 @@
 #lang racket/base
-(require rebellion/type/tuple)
+(require rebellion/type/tuple racket/trace)
+
+(provide leaf make-code-tree decode)
 
 ; data struture
 (define-tuple-type leaf (symbol weight))
@@ -57,8 +59,11 @@
         [(= bit 1) (code-tree-right branch)]
         [else (error "bad bit: CHOOSE-BRANCH" bit)]))
 
+; (trace decode)
 (check-equal? (decode '(0) tree2) '(B) "should equal B")
 (check-equal? (decode '(1 1) tree2) '(D) "1 1 should equal D")
+
+
 
 ; sets of weighted elements
 (define (adjoin-set x set)

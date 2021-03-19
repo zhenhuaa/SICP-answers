@@ -1,5 +1,5 @@
 #lang racket/base
-(require srfi/1 rackunit)
+(require rackunit)
 
 (define nil '())
 (define (enumerate-interval beg end)
@@ -38,7 +38,7 @@
 (define (safe? k positions)
   (let ((k-queen-position (car positions))
         (rest-queen-positions (cdr positions)))
-    (not (any (λ (position)
+    (not (ormap (λ (position)
                 (position-check? position k-queen-position))
               rest-queen-positions))))
 
