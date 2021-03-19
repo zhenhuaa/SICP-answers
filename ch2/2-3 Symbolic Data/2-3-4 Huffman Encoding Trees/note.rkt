@@ -1,7 +1,7 @@
 #lang racket/base
 (require rebellion/type/tuple racket/trace)
 
-(provide leaf make-code-tree decode)
+(provide leaf make-code-tree decode code-tree leaf? code-tree-left code-tree-right leaf-symbol)
 
 ; data struture
 (define-tuple-type leaf (symbol weight))

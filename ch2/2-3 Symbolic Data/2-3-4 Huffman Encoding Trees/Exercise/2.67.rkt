@@ -3,6 +3,8 @@
 ; Exercise 2.67: Define an encoding tree and a sample message:
 (require "../note.rkt" rackunit)
 
+(provide sample-tree sample-message)
+
 (define sample-tree
   (make-code-tree 
    (leaf 'A 4)
