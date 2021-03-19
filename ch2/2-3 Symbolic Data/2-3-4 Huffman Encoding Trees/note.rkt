@@ -59,3 +59,22 @@
 
 (check-equal? (decode '(0) tree2) '(B) "should equal B")
 (check-equal? (decode '(1 1) tree2) '(D) "1 1 should equal D")
+
+; sets of weighted elements
+(define (adjoin-set x set)
+  (cond [(null? set) (list x)]
+        [(< (weight x) (weight (car set))) (cons x set)]
+        [else (cons (car set) (adjoin-set x (cdr set)))]))
+
+(define (make-leaf-set pairs)
+  (if (null? pairs)
+      '()
+      (let ([pair (car pairs)])
+        (adjoin-set
+            (leaf (car pair)
+                    (cadr pair))
+            (make-leaf-set (cdr pairs))))))
+
+(define leaf-pairs '((A 4) (B 2) (C 1) (D 1)))
+(define expect-leaf-set (list (leaf 'D 1) (leaf 'C 1) (leaf 'B 2) (leaf 'A 4)))
+(check-equal? (make-leaf-set leaf-pairs) expect-leaf-set "should make leaf-pairs succ")
