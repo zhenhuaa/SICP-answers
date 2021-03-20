@@ -28,7 +28,8 @@ with the sample tree and seeing whether it is the same as the original sample me
         [(eq? (leaf-symbol (code-tree-left tree)) symbol) '(0)]
         [else (cons 1 (encode-symbol symbol (code-tree-right tree)))]))
 
-(define sample-symbols (decode sample-message sample-tree ))
+(define sample-symbols (decode sample-message sample-tree))
+
 
 (check-equal? (encode sample-symbols sample-tree) sample-message)
 (check-equal? (decode (encode sample-symbols sample-tree) sample-tree)

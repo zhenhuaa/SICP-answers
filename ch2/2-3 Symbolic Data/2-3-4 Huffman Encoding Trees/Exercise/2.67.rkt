@@ -7,16 +7,16 @@
 
 (define sample-tree
   (make-code-tree 
-   (leaf 'A 4)
+   (make-leaf 'A 4)
    (make-code-tree
-    (leaf 'B 2)
+    (make-leaf 'B 2)
     (make-code-tree 
-     (leaf 'D 1)
-     (leaf 'C 1)))))
+     (make-leaf 'D 1)
+     (make-leaf 'C 1)))))
 
 (define sample-message 
   '(0 1 1 0 0 1 0 1 0 1 1 1 0))
 
 (check-equal?
-            (decode sample-message sample-tree )
-             '(A D A B B C A) )
+ (decode sample-message sample-tree)
+ '(A D A B B C A))
