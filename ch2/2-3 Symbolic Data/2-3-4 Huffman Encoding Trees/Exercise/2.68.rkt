@@ -5,6 +5,8 @@
 
 (require "../note.rkt" "2.67.rkt" rackunit racket/trace)
 
+(provide encode)
+
 (define (encode message tree)
   (if (null? message)
       '()

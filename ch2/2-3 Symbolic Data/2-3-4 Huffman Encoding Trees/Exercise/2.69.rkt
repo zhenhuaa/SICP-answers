@@ -5,6 +5,7 @@
 
 
 (require "../note.rkt" rackunit racket/trace)
+(provide generate-huffman-tree)
 
 (define (generate-huffman-tree pairs)
   (successive-merge 
@@ -19,6 +20,10 @@
                 [remain-set (cddr leaf-set)])
             (successive-merge (adjoin-set sub-tree remain-set)))]))
 
-(define leaf-pairs '((E 4) (F 3) (G 2) (H 1)))
-
-(display (generate-huffman-tree leaf-pairs))
+(define leaf-pairs '((F 3) (G 2) (H 1)))
+(define expect (list (make-leaf 'F 3)
+                  (list (make-leaf 'H 1)
+                        (make-leaf 'G 2)
+                        '(H G) 3)
+                  '(F H G) 6))
+(check-equal? (generate-huffman-tree leaf-pairs) expect)
