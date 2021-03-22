@@ -1,14 +1,20 @@
 #lang racket/base
 
+(provide monte-carlo)
+
+(define random-init 100)
+(define (rand-update x) (random 1 1000000))
+
 (define rand
   (let ((x random-init))
     (lambda () (set! x (rand-update x)) x)))
 
 
 ; procedure monte-carlo
-; (define (estimate-pi trials)
-;   (sqrt (/ 6 (monte-carlo trials 
-;                           cesaro-test))))
+(define (estimate-pi trials)
+  (sqrt (/ 6 (monte-carlo trials 
+                          cesaro-test))))
+
 (define (cesaro-test)
    (= (gcd (rand) (rand)) 1))
 
@@ -25,7 +31,7 @@
   (iter trials 0))
 
 
-(define (estimate-pi trials)
+(define (estimate-pi-2 trials)
   (sqrt (/ 6 (random-gcd-test trials 
                               random-init))))
 
@@ -46,3 +52,6 @@
                      trials-passed
                      x2))))))
   (iter trials 0 initial-x))
+
+; (displayln (estimate-pi 10000))
+; (displayln (estimate-pi-2 10000))
