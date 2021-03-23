@@ -10,8 +10,8 @@
     (define (joint-account password op) 
         (if (eq? password  pwd2) (account pwd op)
             (error "Incorrect password")))
-        (if (number? ((account pwd 'deposit) 0)) joint-account
-            (error "create joint account failed")))
+        (begin ((account pwd 'deposit) 0) ; do clever check
+            joint-account))
 
 (define peter-acc (make-account 100 'open-sesame))
 
