@@ -4,6 +4,7 @@
 ; The resulting account object should process a request only if it is accompanied by the password with which the account was created, and should otherwise return a complaint:
 
 (require rackunit)
+(provide make-account)
 
 (define (make-account balance password)
   (define (withdraw amount)
