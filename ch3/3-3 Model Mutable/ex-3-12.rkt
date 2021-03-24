@@ -2,6 +2,8 @@
 
 (require rackunit r5rs racket/trace)
 
+(provide last-pair)
+
 ; The following procedure for appending lists was introduced in 2.2.1:
 (define (append x y)
   (if (null? x)
@@ -28,7 +30,6 @@ x)
 (check-equal? (cdr x) '(b))
 
 (define w (append! x y))
-
 
 (check-equal? w '(a b c d))
 (check-equal? (cdr x) '(b c d))
